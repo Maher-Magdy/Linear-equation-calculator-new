@@ -284,7 +284,7 @@ float Matrix::determ(float a[100][100], int n)
 //stolen code online but can't calculate more than 4x4 sometime !!
 float Matrix::online_determinant_calculator(float matrix[100][100], int n)
 {
-	int det = 0;
+	float det = 0;
 	float submatrix[100][100];
 	if (n == 2)
 		return ((matrix[0][0] * matrix[1][1]) - (matrix[1][0] * matrix[0][1]));
