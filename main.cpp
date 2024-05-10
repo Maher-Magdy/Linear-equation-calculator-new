@@ -36,7 +36,5 @@ int main()
 	}
 	while (operation); //quit is operation 0
 	
-	
-
 	return 0;
 }

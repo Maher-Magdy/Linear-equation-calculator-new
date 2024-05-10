@@ -41,14 +41,35 @@ int mapping_operation(string input)
 // get all equations input data 
 void read_user_equations()
 {
+	string input_line;
+	//getline(cin>>ws,input_line);
 	for (int i = 0; i < no_of_equations; i++)
 	{
-		string input_line;
-		cin >> input_line;
+		//for some unholy reason retarded getline function fucks up at the first iteration
+		if(i==0)getline(cin, input_line);
+		getline(cin , input_line);
 		//input_line = "x3+x2-1-551+126+14-16.3-2+x1+3-2.5-x2-3.2x4+x1+x1+x1+x1+x1+x1+x1+x1+x1+x1=0";
+		//remove all spaces 
+		input_line=remove_spaces(input_line);
 		equations.push_back(parser(input_line));
 	}
 	//equations[0].print_equation_object();//cout for testing
+}
+
+string remove_spaces(string input_line)
+{
+	string result= input_line;
+	int index = 0;
+	for (int i = 0; i < input_line.length(); i++)
+	{
+		if (input_line[i]==' ')
+		{
+			continue;
+		}
+		result[index] = input_line[i];
+		index++;
+	}	
+	return result.substr(0,index);
 }
 
 Equation parser(string input_line)

@@ -28,6 +28,7 @@ extern vector<Equation> equations;
 //functions declaration :
 int mapping_operation(string input);
 void read_user_equations();
+string remove_spaces(string input_line);
 
 //the parser function
 Equation parser(string input_line);
