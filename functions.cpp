@@ -42,11 +42,13 @@ int mapping_operation(string input)
 void read_user_equations()
 {
 	string input_line;
-	//getline(cin>>ws,input_line);
+	
 	for (int i = 0; i < no_of_equations; i++)
 	{
-		//for some unholy reason retarded getline function fucks up at the first iteration
-		if(i==0)getline(cin, input_line);
+		//for some unholy reason retarded getline function fucks up at the first iteration as it takes endl as an input
+		//we can use : if(i==0)getline(cin, input_line);
+		//or we can use 
+		if (i == 0)cin.ignore();
 		getline(cin , input_line);
 		//input_line = "x3+x2-1-551+126+14-16.3-2+x1+3-2.5-x2-3.2x4+x1+x1+x1+x1+x1+x1+x1+x1+x1+x1=0";
 		//remove all spaces 
